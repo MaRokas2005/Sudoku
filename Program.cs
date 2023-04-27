@@ -33,14 +33,15 @@ namespace Sudoku
         public void Read(string filePath)
         {
             string[] lines = File.ReadAllLines(filePath);
+            int a = 0;
             foreach (string line in lines)
             {
                 string[] nums = line.Trim().Split();
-                int[] ints = new int[6];
                 for (int i = 0; i < 6; i++)
                 {
-                    ints[i] = int.Parse(nums[i]);
+                    lenta[a, i] = int.Parse(nums[i]);
                 }
+                a++;
             }
         }
         public string Answer()
