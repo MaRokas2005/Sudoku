@@ -32,7 +32,16 @@ namespace Sudoku
         }
         public void Read(string filePath)
         {
-            
+            string[] lines = File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                string[] nums = line.Trim().Split();
+                int[] ints = new int[6];
+                for (int i = 0; i < 6; i++)
+                {
+                    ints[i] = int.Parse(nums[i]);
+                }
+            }
         }
         public string Answer()
         {
